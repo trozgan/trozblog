@@ -71,6 +71,7 @@
                     </form>
                 </div>
             </div>
+            <a href="redirect/facebook">Login in with Facebook</a>
         </div>
     </div>
 </div>

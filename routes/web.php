@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get ( '/redirect/{service}', 'Auth\SocialAuthController@redirect' );
+Route::get ( '/callback/{service}', 'Auth\SocialAuthController@callback' );
+
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
