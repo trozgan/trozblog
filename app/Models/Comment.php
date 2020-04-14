@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    use Likeable;
-
     /**
      * The attributes that are mass assignable.
      *

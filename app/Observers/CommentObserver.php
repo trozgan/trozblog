@@ -11,7 +11,7 @@ class CommentObserver{
    * @param  \App\Comment  $comment
    * @return void
    */
-  public function creating(Comment $comment){
+  public function saving(Comment $comment){
       $comment->posted_at = now();
   }
 

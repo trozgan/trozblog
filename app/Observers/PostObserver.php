@@ -7,13 +7,23 @@ use Illuminate\Support\Str;
 
 class PostObserver{
   /**
+   * Handle the post "creating" event.
+   *
+   * @param  \App\Post  $post
+   * @return void
+   */
+  public function creating(Post $post){
+      $post->slug = Str::slug($post->title, '-');
+  }
+
+  /**
    * Handle the post "saving" event.
    *
    * @param  \App\Post  $post
    * @return void
    */
   public function saving(Post $post){
-      $post->slug = Str::slug($post->title, '-');
+      $post->posted_at = now();
   }
 
     /**
@@ -25,16 +35,6 @@ class PostObserver{
     public function created(Post $post)
     {
         //
-    }
-
-    /**
-     * Handle the comment "creating" event.
-     *
-     * @param  \App\Post  $post
-     * @return void
-     */
-    public function saving(Post $post){
-        $post->posted_at = now();
     }
 
     /**
