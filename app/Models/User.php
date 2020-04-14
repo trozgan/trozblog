@@ -17,7 +17,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'provider', 'provider_id'
+        'name', 'email', 'password', 'provider', 'provider_id', 'email_verified_at'
     ];
 
     /**
@@ -27,6 +27,15 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $hidden = [
         'password', 'remember_token',
+    ];
+
+    /**
+   * The attributes that should be mutated to dates.
+   *
+   * @var array
+   */
+    protected $dates = [
+        'registered_at'
     ];
 
     /**
@@ -44,4 +53,26 @@ class User extends Authenticatable implements MustVerifyEmail
     public function roles() {
       return $this->belongsToMany('App\Models\Role');
     }
+
+    /**
+    * Return user has a role
+    */
+     public function hasRole(string $role){
+        return $this->roles->where('name', $role)->isNotEmpty();
+     }
+
+    /**
+     * Check if the user has role admin
+     */
+    public function isAdmin(){
+      return $this->hasRole(Role::ROLE_ADMIN);
+    }
+
+    /**
+     * Check if the user has role editor
+     */
+    public function isEditor(){
+      return $this->hasRole(Role::ROLE_EDITOR);
+    }
+
 }

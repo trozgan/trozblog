@@ -6,3 +6,18 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Base
+@import "base/base";
+
+// Shared
+@import "shared/sidebar";
+@import "shared/footer";
+
+// Layouts
+@import "layouts/administration";
+
+// Blog styles
+@import "site-base";
+@import "site-navbar";
+@import "site-blocks";

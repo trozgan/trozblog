@@ -5,6 +5,7 @@
 ._*
 *.bak
 /node_modules
+/v8-compile-cache-0
 npm-debug.log
 /public/.htaccess
 /public/storage

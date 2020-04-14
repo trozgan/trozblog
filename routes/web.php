@@ -13,13 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('blogpost', 'HomeController@blogpost')->name('blogpost');
+Route::get('contact', 'HomeController@contact')->name('contact');
+Route::get('category', 'HomeController@category')->name('category');
+
 
 Route::get ( '/redirect/{service}', 'Auth\SocialAuthController@redirect' );
 Route::get ( '/callback/{service}', 'Auth\SocialAuthController@callback' );
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

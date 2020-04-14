@@ -10882,3 +10882,130 @@ a.text-dark:focus {
   }
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.huge {
+  font-size: 40px;
+}
+
+body > #app > .container {
+  margin-top: 100px;
+  margin-bottom: 250px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+@media (max-width: 575.98px) {
+  body > #app > .container {
+    margin-bottom: 320px;
+  }
+}
+
+body > #app > .container-fluid,
+body > #app > .container-sm,
+body > #app > .container-md,
+body > #app > .container-lg,
+body > #app > .container-xl {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.navbar-collapse {
+  overflow: auto;
+  max-height: 75vh;
+}
+
+.navbar-sidenav-tooltip.show,
+.sidenav-toggler {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .navbar-collapse {
+    overflow: visible;
+    max-height: none;
+  }
+
+  .navbar-collapse .navbar-sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-direction: column;
+    margin-top: 56px;
+  }
+
+  .navbar-sidenav .nav-link,
+  .sidenav-toggler .nav-link {
+    width: 250px;
+    padding: 1em !important;
+  }
+
+  .navbar-sidenav {
+    height: calc(100vh - 112px);
+  }
+
+  .sidenav-toggler {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-direction: column;
+    margin-top: calc(100vh - 56px);
+    background-color: #212529;
+  }
+
+  .sidenav-toggler a i {
+    color: #adb5bd;
+  }
+}
+
+.sidenav-toggled .nav-link-text {
+  display: none;
+}
+
+.sidenav-toggled .navbar-sidenav-tooltip.show {
+  display: flex;
+}
+
+.sidenav-toggled .sidenav-toggler i {
+  transform: scaleX(-1);
+}
+
+.sidenav-toggled .navbar-sidenav,
+.sidenav-toggled .sidenav-toggler .nav-link {
+  width: 55px !important;
+}
+
+.footer-container {
+  bottom: 0;
+  width: 100%;
+}
+
+.content-wrapper {
+  overflow-x: hidden;
+  min-height: calc(100vh - 56px);
+  padding: 1rem 0;
+}
+
+@media (min-width: 992px) {
+  .content-wrapper {
+    margin-left: 250px;
+  }
+
+  .sidenav-toggled .content-wrapper {
+    margin-left: 55px;
+  }
+}
+
+.admin-body {
+  padding-top: 56px;
+}
+

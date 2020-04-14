@@ -54,6 +54,7 @@ class SocialAuthController extends Controller{
       return User::create([
         'name' => $user->name ?? $user->email,
         'email' => $user->email,
+        'email_verified_at' => now(),
         'password' => Hash::make(Str::random(15)),
         'provider' => $service,
         'provider_id' => $user->id
